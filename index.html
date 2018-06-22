@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title> Pocket List </title>
+    <!-- Add Favicon -->
+    <link rel="shortcut icon" type="image/png" href="Icons/Logo.png"/>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Barlow:200,300,400,400i,500,700" rel="stylesheet">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+  </head>
+  <body>
+
+  <!-- Animated Loading Screen Thing-->
+  <div id="loadingScreen">
+    <div>
+    <img src="Icons/Logo.png">
+    </div>
+
+    <div>
+      <h1> Pocket List </h1>
+    </div>
+
+    <div>
+      <p id="loadingLine"> Loading your list... </p>
+    </div>
+  </div>
+    <!-- Side Navigation -->
+  <nav id="navigation">
+    <header id="menu-header">
+      <h1> Pocket List </h1>
+    </header>
+    <div id="close">
+      <svg fill="#FFF" height="30" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg"> <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/> <path d="M0 0h24v24H0z" fill="none"/></svg>
+    </div>
+    <!-- Input Field, Multiple Todo Lists and Progress Bar Goes Here -->
+    <input id="List-Input" type="text" value="" autocorrect="words" autocapitalize="words" placeholder="Add a new todo list...">
+    <div id="add-list">
+      <svg id="add-button" height="40" weight="40"version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" fill="#FFF" viewBox="0 0 42 42" style="enable-background:new 0 0 42 42;" xml:space="preserve"> <polygon class="fill" points="42,20 22,20 22,0 20,0 20,20 0,20 0,22 20,22 20,42 22,42 22,22 42,22 "/><g></g></svg>
+    </div>
+    <ul id="todo-lists">
+      <li> General </li>
+    </ul>
+    <div id="progress">
+      <p id="progress-percentage" class="text"> This text shouldn't be seen, if it is seen, then there is a bug. Please report it! </p>
+      <p class="text"> Done </p>
+      <svg xmlns="http://www.w3.org/2000/svg" class="progress" viewBox="0 0 343 343"><defs><style>.cls-1{fill:none;stroke:url(#linear-gradient);stroke-linecap:round;stroke-miterlimit:10;stroke-width:50px;}</style><linearGradient id="linear-gradient" x1="98.25" y1="343" x2="98.25" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#66f"/><stop offset="1" stop-color="#3298e0"/></linearGradient></defs><g><g><circle id="progress-bar" class="cls-1" cx="171.5" cy="171.5" r="146.5" stroke-dasharray="920.48" stroke-dashoffset="920.48"/></g></g></svg>
+    </div>
+  </nav>
+  <!-- because it didn't want to work INSIDE the navigation :( -->
+  <div id="Gradient-Thing"></div>
+  <footer id="Basic-Footer"></footer>
+
+  <div id="container">
+    <div id="overlay"> </div>
+    <header id="header">
+      <input id="item" type="text" value="" autocorrect="on" autocapitalize="sentences" placeholder="Add something todo...">
+      <label id="upload-label"><svg fill="#30a0ff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>
+        <input type="file" id="upload" accept="image/*" onchange="uploadFile"/>
+          </label>
+      <div id="navButton"> <svg fill="#6fcaff" height="28" viewBox="0 0 24 24" width="28" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg> </div>
+      <div id="upload-contain">
+        <img id="preview">
+      </div>
+    </header>
+
+    <!-- Todo List -->
+    <ul id="todo"></ul>
+    <!-- Complete List -->
+    <ul id="complete"></ul>
+
+    <!-- Add Button -->
+    <div id="add">
+    <div>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" fill="#FFF" viewBox="0 0 42 42" style="enable-background:new 0 0 42 42;" xml:space="preserve"> <polygon class="fill" points="42,20 22,20 22,0 20,0 20,20 0,20 0,22 20,22 20,42 22,42 22,22 42,22 "/><g></g></svg>
+    </div>
+    </div>
+  </div>
+
+  <!-- Color Pop Up -->
+  <div id="colorPopUp">
+    <div id="closeMenu">
+      <svg fill="#000" height="30" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg"> <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/> <path d="M0 0h24v24H0z" fill="none"/></svg>
+    </div>
+      <h1> Select A Color </h1>
+        <div id="red" class="color"><p> Red </p></div>
+        <div id="blue" class="color"><p> Blue </p></div>
+        <div id="green" class="color"><p> Green </p></div>
+        <div id="orange" class="color"><p> Orange </p></div>
+        <div id="yellow" class="color"><p> Yellow </p></div>
+        <div id="purple" class="color"><p> Purple </p></div>
+        <div id="black" class="color"><p> Black </p></div>
+        <div id="grey" class="color"><p> Grey </p></div>
+        <div id="white" class="color"><p> White </p></div>
+      <h3> Pick A Custom Color </h3>
+    <input type="color" id="color">
+  </div>
+
+  <!-- Dynamic Expansion Box Thing -->
+<div id="expansion">
+  <!-- Li Value gets stored as an editable h1 -->
+  <h1 contenteditable="true" id="dynamic-li"> Lorem ipsum... </h1>
+  <!-- To upload images again -->
+  <svg fill="#000" height="24" id="close-expansion" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg"> <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/> <path d="M0 0h24v24H0z" fill="none"/></svg>
+  <label id="upload-labelAgain"><svg fill="#30a0ff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>
+    <input type="file" id="uploadAgain" accept="image/*" onchange="uploadFile"/>
+  </label>
+    <p contenteditable="true" id="notes" data-placeholder="Add some notes..."> </p>
+    <!-- Inputs for time and date -->
+      <input id="time" type="datetime-local">
+
+      <!-- If there is an image it needs to display said image -->
+      <div id=upload-containAgain>
+    <img id="previewAgain">
+  </div>
+</div>
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="js/main.js"></script>
+  </body>
+</html>
